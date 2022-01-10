@@ -1,0 +1,339 @@
+:root {
+  --main-font: 'Roboto', sans-serif;
+  --secondary-font: 'Raleway', sans-serif;
+  --accent-color: #2f303a;
+  --title-color: #212121;
+  --primary-text-color: #757575;
+  --primary-background-color: #ffffff;
+  --back-color: #2f303a;
+  --color-filter: #f5f4fa;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --accent-btn: #188ce8;
+  --gradient-hero: linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)
+  );
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: color 150ms var(--timing-function),
+    background-color 150ms var(--timing-function);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+
+/* .comments-list {
+  text-align: start;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  list-style-type: disc;
+} */
+
+.comments__item {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: rgba(248, 246, 246, 0.979);
+  border-radius: 8px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.comments-block {
+  display: flex;
+  margin: 10px;
+}
+.comments-date {
+  margin-left: auto;
+}
+
+.comments-text {
+  display: inline-block;
+  padding-left: 30px;
+  width: 480px;
+}
+
+.paginations-list {
+  display: flex;
+  justify-content: center;
+}
+
+.paginations__item {
+  margin: 5px;
+  padding: 10px;
+  background: rgba(248, 246, 246, 0.979);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.paginations__item:hover {
+  box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.15);
+  background: rgba(219, 216, 216, 0.979);
+}
+
+.paginations__item--active {
+  background: rgba(158, 157, 157, 0.692);
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.paginations__item:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccca4;
+  color: #5c5c5c;
+  cursor: default;
+}
+
+.button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
+
+  background-color: #cccccc;
+
+  border-color: #212121;
+
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.05);
+  font: inherit;
+  font-weight: 500;
+  transition: background-color 250ms var(--timing-function);
+}
+
+.button:hover {
+  box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.15);
+  background-color: #d3d5d6;
+}
+
+.button.is-hidden {
+  display: none;
+}
+
+.button > .spinner.is-hidden {
+  display: none;
+}
+
+.modal-form {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  border-radius: 25px;
+  border: solid 1px black;
+}
+
+.modal-form__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--title-color);
+  margin-bottom: 12px;
+}
+
+.modal-form__field {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+  margin-bottom: 4px;
+}
+
+.form-wrapper {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-wrapper__icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  display: block;
+  fill: var(--title-color);
+  transition: fill 250ms var(--timing-function);
+}
+
+.form-wrapper__input:focus {
+  fill: var(--accent-color);
+}
+
+.form-wrapper__input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 6px;
+  padding-left: 42px;
+  padding-right: 12px;
+  cursor: pointer;
+  transition: border-color 250ms var(--timing-function);
+}
+.form-wrapper__input:focus,
+:hover {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.modal-form__message {
+  width: 100%;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  resize: none;
+  transition: border-color 250ms var(--timing-function);
+}
+
+.modal-form__message ::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form__message :focus,
+:hover {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+@media screen and (min-width: 1200px) {
+  .modal-form__title {
+    font-size: 20px;
+    line-height: 1.15;
+  }
+  .modal-form__field {
+    font-size: 12px;
+    line-height: 1.16;
+  }
+
+  .modal-form__message::placeholder {
+    font-size: 12px;
+    line-height: 1.16;
+  }
+}
+
+.loader {
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.loader.hidden {
+  display: none;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.circle:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.circle:nth-child(1) {
+  animation: hop 1s ease-in-out infinite;
+}
+
+.circle:nth-child(2) {
+  animation: hop 1s ease-in-out infinite 0.1s;
+}
+
+.circle:nth-child(3) {
+  animation: hop 1s ease-in-out infinite 0.2s;
+}
+
+@keyframes hop {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  25% {
+    transform: scale(1.1) translateY(10px);
+  }
+  50% {
+    transform: scale(1.2) translateY(20px);
+  }
+  75% {
+    transform: scale(1.1) translateY(10px);
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+  }
+}
